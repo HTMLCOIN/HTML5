@@ -4,8 +4,11 @@ HTMLCoin
 
 ## What is HTMLCoin?
 
-HTMLCoin is the HTML cryptocurrency SERIES 5, we are updated and running fast with bug fixes.
-The total number of coin will be 90 BILLION.
+The new HTMLCOIN (HTML5 as a new symbol & version) is based on a stable system, design to withstand the demands of the entire altcoin community.
+
+Our new algorithm is based on X15 POW + POS (After 5 years we will be POS).
+
+This new algorithm is design to be adoptable for future applications. HTML5 has a stable & fast system, with robust security capabilities.
 
 http://htmlcoin.com
 
@@ -15,22 +18,32 @@ HTMLCoin is released under the terms of the MIT license. See COPYING for more in
 
 ## Development and contributions
 
-Our development is based on an professional developer and we will be happy to hear community tips and pull requests on our GitHub repository.
+Our development is based on an professional developer and we will be happy to hear community tips and pull requests on our GitHub repository. Our team is composed of different nationalities, diversity is our strength. The educational backgrounds and the experience of our members are  commendable, they are expert in their own field. 
 
 ## Specifications
 
-Symbol: HTML
-Total Coins: 90,000,000,000
-Block Time: 60 second 
-Difficulty Retarget: Every Block with Dark Gravity Wave v3 
-Algorithm: X15 
-Swap : 40% - Used to swap old coins and pay development, tools and bounties
+Name: HTMLCOIN
+Symbol: HTML5 or </>
+Total coin: 90 Billion 
+Block time: 60 seconds 
+Difficulty Re-targets: Every block Confirmations on Transactions: 10 
+Maturity: 15
+QR CODE support
+UPNP Support
+Swap: 40% use in transitiong to new coin
 
 
-## Block Reward System
+## Quality
 
-36~39BI of  HTML ( Block 0 - 10) 
-5000 HTML ( Block 11 - LAST BLOCK) 
+Prof of Developer: http://cryptoasian.com/html-htmlcoin/
+
+## Algorithm: X15
+
+15 ROUNDS OF SCIENTIFIC HASHING (blake, bmw, groestl, jh, keccak, skein, luffa, cubehash, shavite, simd, echo, hamsi, fugue, shabal, whirlpool). You can mine HTMLCOIN with CPU or GPU, we are ASIC RESISTANT.
+
+## POW Reward
+Total Block: 10,800,000 
+Block 11 - 10,800,000: 5 000 HTML5 After block 10,800,00 POS will start . 1% Annual PoS.
 
 ## Ports
 
@@ -39,6 +52,16 @@ P2P Port = 6877
 Testnet RPC: 16876
 Testnet P2P: 16877 
 
+## Wallet:
+ 
+WINDOWS: www.htmlcoin.net/download/Windows.rar
+LINUX 64 BITS:  www.htmlcoin.net/download/Linux-x64.tar.bz2
+LINUX 32 BITS:  www.htmlcoin.net/download/Linux-x86.tar.bz2
+
 ## Community
 
-forum: https://cryptocointalk.com/topic/17467-htmlcoin-html5-information/
+Facebook: https://www.facebook.com/groups/htmlcoin/
+Twitter: https://twitter.com/HTMLCOIN
+Reddit: http://www.reddit.com/r/htmlcoin_community/
+Forum: https://cryptocointalk.com/topic/17467-htmlcoin-html5-information/
+
