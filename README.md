@@ -1,8 +1,4 @@
-## HTML5 [HTML]
-
-HTMLCOIN
-
-## What is HTMLCoin?
+## HTML5 [HTML5]
 
 The new HTMLCOIN (HTML5 as a new symbol & version) is based on a stable system, design to withstand the demands of the entire altcoin community.
 
