@@ -1,6 +1,6 @@
 ## HTML5 [HTML]
 
-![HTMLCoin]
+HTMLCoin
 
 ## What is HTMLCoin?
 
@@ -24,7 +24,7 @@ Total Coins: 99,000,000,000
 Block Time: 60 second 
 Difficulty Retarget: Every Block with Dark Gravity Wave v3 
 Algorithm: X15 
-Premine : 40% - Used to swap old coins and pay development, tools and bounties
+Swap : 40% - Used to swap old coins and pay development, tools and bounties
 
 
 ## Block Reward System
@@ -42,4 +42,3 @@ Testnet P2P: 16877
 ## Community
 
 forum: http://forum.htmlcoin.com <br>
-NEED MORE INFORMATION
