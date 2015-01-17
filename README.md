@@ -1,6 +1,6 @@
 ## HTML5 [HTML]
 
-HTMLCoin
+HTMLCOIN
 
 ## What is HTMLCoin?
 
