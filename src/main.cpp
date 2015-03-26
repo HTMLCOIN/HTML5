@@ -2458,10 +2458,10 @@ bool LoadBlockIndex(bool fAllowNew)
 
     if (fTestNet)
     {
-        pchMessageStart[0] = 0xa8;
-        pchMessageStart[1] = 0xa3;
-        pchMessageStart[2] = 0xa1;
-        pchMessageStart[3] = 0xa4;
+        pchMessageStart[0] = 0x8a;
+        pchMessageStart[1] = 0x3a;
+        pchMessageStart[2] = 0x1a;
+        pchMessageStart[3] = 0x4a;
 
         bnProofOfWorkLimit = bnProofOfWorkLimitTestNet; // 0x0000ffff PoW base target is fixed in testnet
         nStakeMinAge = 20 * 60; // test net min age is 20 min
