@@ -1164,7 +1164,7 @@ static void ApproximateBestSubset(vector<pair<int64_t, pair<const CWalletTx*,uns
     }
 }
 
-// ppcoin: total coins staked (non-spendable until maturity)
+// HTML5: total coins staked (non-spendable until maturity)
 int64_t CWallet::GetStake() const
 {
     int64_t nTotal = 0;
@@ -1494,7 +1494,7 @@ bool CWallet::CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx&
     return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet, coinControl);
 }
 
-// NovaCoin: get current stake weight
+// HTML5: get current stake weight
 bool CWallet::GetStakeWeight(const CKeyStore& keystore, uint64_t& nMinWeight, uint64_t& nMaxWeight, uint64_t& nWeight)
 {
     // Choose coins to use
@@ -2250,8 +2250,8 @@ set< set<CTxDestination> > CWallet::GetAddressGroupings()
     return ret;
 }
 
-// ppcoin: check 'spent' consistency between wallet and txindex
-// ppcoin: fix wallet spent state according to txindex
+// HTML5: check 'spent' consistency between wallet and txindex
+// HTML5: fix wallet spent state according to txindex
 void CWallet::FixSpentCoins(int& nMismatchFound, int64_t& nBalanceInQuestion, bool fCheckOnly)
 {
     nMismatchFound = 0;
@@ -2300,7 +2300,7 @@ void CWallet::FixSpentCoins(int& nMismatchFound, int64_t& nBalanceInQuestion, bo
     }
 }
 
-// ppcoin: disable transaction (only for coinstake)
+// HTML5: disable transaction (only for coinstake)
 void CWallet::DisableTransaction(const CTransaction &tx)
 {
     if (!tx.IsCoinStake() || !IsFromMe(tx))

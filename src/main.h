@@ -531,7 +531,7 @@ public:
 
     bool IsCoinStake() const
     {
-        // ppcoin: the coin stake transaction is marked with the first output empty
+        // HTML5: the coin stake transaction is marked with the first output empty
         return (vin.size() > 0 && (!vin[0].prevout.IsNull()) && vout.size() >= 2 && vout[0].IsEmpty());
     }
 
@@ -695,7 +695,7 @@ public:
     bool ClientConnectInputs();
     bool CheckTransaction() const;
     bool AcceptToMemoryPool(CTxDB& txdb, bool fCheckInputs=true, bool* pfMissingInputs=NULL);
-    bool GetCoinAge(CTxDB& txdb, uint64_t& nCoinAge) const;  // ppcoin: get transaction coin age
+    bool GetCoinAge(CTxDB& txdb, uint64_t& nCoinAge) const;  // HTML5: get transaction coin age
 
 protected:
     const CTxOut& GetOutputFor(const CTxIn& input, const MapPrevTx& inputs) const;
@@ -847,7 +847,7 @@ public:
     // network and disk
     std::vector<CTransaction> vtx;
 
-    // ppcoin: block signature - signed by one of the coin base txout[N]'s owner
+    // HTML5: block signature - signed by one of the coin base txout[N]'s owner
     std::vector<unsigned char> vchBlockSig;
 
     // memory only
@@ -926,7 +926,7 @@ public:
         return nEntropyBit;
     }
 
-    // ppcoin: two types of block: proof-of-work or proof-of-stake
+    // HTML5: two types of block: proof-of-work or proof-of-stake
     bool IsProofOfStake() const
     {
         return (vtx.size() > 1 && vtx[1].IsCoinStake());
@@ -942,7 +942,7 @@ public:
         return IsProofOfStake()? std::make_pair(vtx[1].vin[0].prevout, vtx[1].nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
 
-    // ppcoin: get max transaction timestamp
+    // HTML5: get max transaction timestamp
     int64_t GetMaxTransactionTime() const
     {
         int64_t maxTransactionTime = 0;
@@ -1085,7 +1085,7 @@ public:
     bool AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos, const uint256& hashProofOfStake);
     bool CheckBlock(bool fCheckPOW=true, bool fCheckMerkleRoot=true, bool fCheckSig=true) const;
     bool AcceptBlock();
-    bool GetCoinAge(uint64_t& nCoinAge) const; // ppcoin: calculate total coin age spent in block
+    bool GetCoinAge(uint64_t& nCoinAge) const; // HTML5: calculate total coin age spent in block
     bool SignBlock(CWallet& keystore, int64_t nFees);
     bool CheckBlockSignature() const;
 
@@ -1113,13 +1113,13 @@ public:
     CBlockIndex* pnext;
     unsigned int nFile;
     unsigned int nBlockPos;
-    uint256 nChainTrust; // ppcoin: trust score of block chain
+    uint256 nChainTrust; // HTML5: trust score of block chain
     int nHeight;
 
     int64_t nMint;
     int64_t nMoneySupply;
 
-    unsigned int nFlags;  // ppcoin: block index flags
+    unsigned int nFlags;  // HTML5: block index flags
     enum  
     {
         BLOCK_PROOF_OF_STAKE = (1 << 0), // is proof-of-stake block

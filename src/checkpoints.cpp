@@ -69,7 +69,7 @@ namespace Checkpoints
         return NULL;
     }
 
-    // ppcoin: synchronized checkpoint (centrally broadcasted)
+    // HTML5: synchronized checkpoint (centrally broadcasted)
     uint256 hashSyncCheckpoint = 0;
     uint256 hashPendingCheckpoint = 0;
     CSyncCheckpoint checkpointMessage;
@@ -77,7 +77,7 @@ namespace Checkpoints
     uint256 hashInvalidCheckpoint = 0;
     CCriticalSection cs_hashSyncCheckpoint;
 
-    // ppcoin: get last synchronized checkpoint
+    // HTML5: get last synchronized checkpoint
     CBlockIndex* GetLastSyncCheckpoint()
     {
         LOCK(cs_hashSyncCheckpoint);
@@ -88,7 +88,7 @@ namespace Checkpoints
         return NULL;
     }
 
-    // ppcoin: only descendant of current sync-checkpoint is allowed
+    // HTML5: only descendant of current sync-checkpoint is allowed
     bool ValidateSyncCheckpoint(uint256 hashCheckpoint)
     {
         if (!mapBlockIndex.count(hashSyncCheckpoint))
@@ -241,7 +241,7 @@ namespace Checkpoints
         return false;
     }
 
-    // ppcoin: reset synchronized checkpoint to last hardened checkpoint
+    // HTML5: reset synchronized checkpoint to last hardened checkpoint
     bool ResetSyncCheckpoint()
     {
         LOCK(cs_hashSyncCheckpoint);
@@ -357,7 +357,7 @@ const std::string CSyncCheckpoint::strMasterPubKey = "049F2C10997604217E7238A4C5
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 
-// ppcoin: verify signature of sync-checkpoint message
+// HTML5: verify signature of sync-checkpoint message
 bool CSyncCheckpoint::CheckSignature()
 {
     CKey key;
@@ -372,7 +372,7 @@ bool CSyncCheckpoint::CheckSignature()
     return true;
 }
 
-// ppcoin: process synchronized checkpoint
+// HTML5: process synchronized checkpoint
 bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
 {
     if (!CheckSignature())

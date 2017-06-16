@@ -300,6 +300,7 @@ static const CRPCCommand vRPCCommands[] =
     { "signrawtransaction",     &signrawtransaction,     false,  false },
     { "sendrawtransaction",     &sendrawtransaction,     false,  false },
     { "getcheckpoint",          &getcheckpoint,          true,   false },
+	{ "sendcheckpoint",         &sendcheckpoint,         true,   false },
     { "reservebalance",         &reservebalance,         false,  true},
     { "checkwallet",            &checkwallet,            false,  true},
     { "repairwallet",           &repairwallet,           false,  true},

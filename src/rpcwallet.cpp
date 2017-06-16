@@ -1455,7 +1455,7 @@ Value walletpassphrase(const Array& params, bool fHelp)
     int64_t* pnSleepTime = new int64_t(params[1].get_int64());
     NewThread(ThreadCleanWalletPassphrase, pnSleepTime);
 
-    // ppcoin: if user OS account compromised prevent trivial sendmoney commands
+    // HTML5: if user OS account compromised prevent trivial sendmoney commands
     if (params.size() > 2)
         fWalletUnlockStakingOnly = params[2].get_bool();
     else
@@ -1655,7 +1655,7 @@ Value validatepubkey(const Array& params, bool fHelp)
     return ret;
 }
 
-// ppcoin: reserve balance from being staked for network protection
+// HTML5: reserve balance from being staked for network protection
 Value reservebalance(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 2)
@@ -1694,7 +1694,7 @@ Value reservebalance(const Array& params, bool fHelp)
 }
 
 
-// ppcoin: check wallet integrity
+// HTML5: check wallet integrity
 Value checkwallet(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 0)
@@ -1717,7 +1717,7 @@ Value checkwallet(const Array& params, bool fHelp)
 }
 
 
-// ppcoin: repair wallet
+// HTML5: repair wallet
 Value repairwallet(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 0)
@@ -1739,7 +1739,7 @@ Value repairwallet(const Array& params, bool fHelp)
     return result;
 }
 
-// NovaCoin: resend unconfirmed wallet transactions
+// HTML5: resend unconfirmed wallet transactions
 Value resendtx(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)
@@ -1753,7 +1753,7 @@ Value resendtx(const Array& params, bool fHelp)
     return Value::null;
 }
 
-// ppcoin: make a public-private key pair
+// HTML5: make a public-private key pair
 Value makekeypair(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)

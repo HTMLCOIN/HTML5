@@ -1,8 +1,8 @@
-// Copyright (c) 2012-2013 The PPCoin developers
+// Copyright (c) 2012-2013 The HTML5 developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef PPCOIN_KERNEL_H
-#define PPCOIN_KERNEL_H
+#ifndef HTML5_KERNEL_H
+#define HTML5_KERNEL_H
 
 #include "main.h"
 
@@ -36,4 +36,4 @@ bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierCheck
 // Get time weight using supplied timestamps
 int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd);
 
-#endif // PPCOIN_KERNEL_H
+#endif // HTML5_KERNEL_H

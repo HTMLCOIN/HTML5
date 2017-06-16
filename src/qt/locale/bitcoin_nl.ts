@@ -14,10 +14,10 @@
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
-Copyright © 2012-2014 The NovaCoin developers
+Copyright © 2012-2014 The HTML5 developers
 Copyright © 2014 The Htmlcoin developers</source>
         <translation>Copyright © 2009-2014 De Bitcoin ontwikkelaars
-Copyright © 2012-2014 De NovaCoin ontwikkelaars
+Copyright © 2012-2014 De HTML5 ontwikkelaars
 Copyright © 2014 De Htmlcoin ontwikkelaars</translation>
     </message>
     <message>
