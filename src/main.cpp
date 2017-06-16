@@ -2458,11 +2458,10 @@ bool LoadBlockIndex(bool fAllowNew)
 
     if (fTestNet)
     {
-        pchMessageStart[0] = 0x8a;
-        pchMessageStart[1] = 0x3a;
-        pchMessageStart[2] = 0x1a;
-        pchMessageStart[3] = 0x4a;
-
+        pchMessageStart[0] = 0xa8;
+        pchMessageStart[1] = 0xa3;
+        pchMessageStart[2] = 0xa1;
+        pchMessageStart[3] = 0xa5;
         bnProofOfWorkLimit = bnProofOfWorkLimitTestNet; // 0x0000ffff PoW base target is fixed in testnet
         nStakeMinAge = 20 * 60; // test net min age is 20 min
         nCoinbaseMaturity = 5; // test maturity is 5 blocks
@@ -2500,6 +2499,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nNonce   = 0;
 		if(fTestNet)
         {
+			block.nTime    = 1497265200; // GMT: Monday, 12 June 2017 11:00:00
             block.nNonce   = 0;
         }
         if (false  && (block.GetHash() != hashGenesisBlock)) {
