@@ -1,0 +1,17 @@
+src/*.exe
+src/Htmld
+src/qt/locale/*.qm
+release/*
+debug/*
+build/*
+*.Debug
+*.Release
+htmlcoin-qt_plugin_import.cpp
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.o
+*.patch
+Makefile
