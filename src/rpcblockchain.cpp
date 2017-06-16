@@ -305,3 +305,36 @@ Value getcheckpoint(const Array& params, bool fHelp)
 
     return result;
 }
+
+Value sendcheckpoint(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 1)
+        throw runtime_error(
+            "sendcheckpoint <blockhash>\n"
+            "Send a synchronized checkpoint.\n");
+ 
+    if (!mapArgs.count("-checkpointkey") || CSyncCheckpoint::strMasterPrivKey.empty())
+        throw runtime_error("Not a checkpointmaster node, first set checkpointkey in configuration and restart client. ");
+ 
+    std::string strHash = params[0].get_str();
+    uint256 hash(strHash);
+ 
+    if (!Checkpoints::SendSyncCheckpoint(hash))
+        throw runtime_error("Failed to send checkpoint, check log. ");
+ 
+    Object result;
+    CBlockIndex* pindexCheckpoint;
+ 
+    result.push_back(Pair("synccheckpoint", Checkpoints::hashSyncCheckpoint.ToString().c_str()));
+    if (mapBlockIndex.count(Checkpoints::hashSyncCheckpoint))
+    {
+        pindexCheckpoint = mapBlockIndex[Checkpoints::hashSyncCheckpoint];
+        result.push_back(Pair("height", pindexCheckpoint->nHeight));
+        result.push_back(Pair("timestamp", (boost::int64_t) pindexCheckpoint->GetBlockTime()));
+    }
+	
+    if (mapArgs.count("-checkpointkey"))
+        result.push_back(Pair("checkpointmaster", true));
+ 
+    return result;
+}
