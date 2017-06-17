@@ -1,28 +1,28 @@
-Name Htmlcoin
+Name HTMLCoin
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.3.0
+!define VERSION 1.3.2.1
 !define COMPANY "Htmlcoin project"
 !define URL http://www.htmlcoin.com
 
 # MUI Symbol Definitions
-!define MUI_ICON "../share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "pixmaps\bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "pixmaps\nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "../share/pixmaps/nsis-header.bmp"
-!define MUI_FINISHPAGE_NOAUTOCLOSE
+!define MUI_HEADERIMAGE_BITMAP "pixmaps\nsis-header.bmp"
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER Htmlcoin
-#!define MUI_FINISHPAGE_RUN $INSTDIR\Htmlcoin-Qt.exe
+!define MUI_FINISHPAGE_RUN $INSTDIR\Htmlcoin-Qt.exe
+!define MUI_FINISHPAGE_RUN_TEXT "Launch HTMLCoin"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "pixmaps\nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -33,26 +33,25 @@ SetCompressor /SOLID lzma
 Var StartMenuGroup
 
 # Installer pages
-!insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_STARTMENU Application $StartMenuGroup
 !insertmacro MUI_PAGE_INSTFILES
-!insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_PAGE_FINISH
 
 # Installer languages
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile Htmlcoin-0.1.0-win32-setup.exe
+OutFile HTMLCoin-${VERSION}-setup.exe
 InstallDir $PROGRAMFILES\Htmlcoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.1.0.0
-VIAddVersionKey ProductName Htmlcoin
+VIProductVersion ${VERSION}
+VIAddVersionKey ProductName HTMLCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -66,19 +65,9 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    #File ../release/Htmlcoin-Qt.exe
-    File /oname=license.txt ../COPYING
-    File /oname=readme.txt ../doc/README_windows.txt
-    SetOutPath $INSTDIR\daemon
-    File ../src/Htmld.exe
-    SetOutPath $INSTDIR\src
-    File /r /x *.exe /x *.o ../src\*.*
+    File ..\release\Htmlcoin-Qt.exe
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
-
-    # Remove old wxwidgets-based-htmlcoin executable and locales:
-    #Delete /REBOOTOK $INSTDIR\Htmlcoin-Qt.exe
-    #RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
 Section -post SEC0001
@@ -87,7 +76,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall Htmlcoin.lnk" $INSTDIR\uninstall.exe
+	CreateShortcut "$SMPROGRAMS\$StartMenuGroup\HTMLCoin.lnk" $INSTDIR\Htmlcoin-Qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall HTMLCoin.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -120,19 +110,15 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    #Delete /REBOOTOK $INSTDIR\Htmlcoin-Qt.exe
-    Delete /REBOOTOK $INSTDIR\license.txt
-    Delete /REBOOTOK $INSTDIR\readme.txt
-    RMDir /r /REBOOTOK $INSTDIR\daemon
-    RMDir /r /REBOOTOK $INSTDIR\src
+    Delete /REBOOTOK $INSTDIR\Htmlcoin-Qt.exe
     DeleteRegValue HKCU "${REGKEY}\Components" Main
 SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall Htmlcoin.lnk"
-    #Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Htmlcoin.lnk"
-    #Delete /REBOOTOK "$SMSTARTUP\Htmlcoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall HTMLCoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\HTMLCoin.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\HTMLCoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
