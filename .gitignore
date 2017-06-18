@@ -15,3 +15,4 @@ htmlcoin-qt_plugin_import.cpp
 *.o
 *.patch
 Makefile
+Htmlcoin.pro.user
