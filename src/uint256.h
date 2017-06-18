@@ -350,6 +350,16 @@ public:
     {
         return (unsigned char*)&pn[WIDTH];
     }
+    
+    unsigned char* begin() const
+    {
+        return (unsigned char*)&pn[0];
+    }
+
+    unsigned char* end() const
+    {
+        return (unsigned char*)&pn[WIDTH];
+    }
 
     unsigned int size()
     {
