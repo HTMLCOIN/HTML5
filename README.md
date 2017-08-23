@@ -1,4 +1,4 @@
-## HTML5 [HTML5]
+## HTMLCOIN [HTML5]
 
 The new HTMLCOIN (HTML5 as a new symbol & version) is based on a stable system, design to withstand the demands of the entire altcoin community.
 
@@ -31,7 +31,8 @@ Swap: 40% use in transitiong to new coin
 
 ## Quality
 
-Prof of Developer: http://cryptoasian.com/html-htmlcoin/
+Proof of Developer: http://proofofdev.com/project/html-htmlcoin/
+Proof of Developer: http://cryptoasian.com/html-htmlcoin/
 
 ## Algorithm: X15
 
@@ -59,5 +60,7 @@ LINUX 32 BITS:  www.htmlcoin.net/download/Linux-x86.tar.bz2
 Facebook: https://www.facebook.com/groups/htmlcoin/
 Twitter: https://twitter.com/HTMLCOIN
 Reddit: http://www.reddit.com/r/htmlcoin_community/
+Telegram: https://t.me/htmlcoinofficial
+Slack: https://htmlcoin.slack.com/messages
 Forum: https://cryptocointalk.com/topic/17467-htmlcoin-html5-information/
 
