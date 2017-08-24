@@ -51,9 +51,12 @@ Testnet P2P: 16877
 
 ## Wallet:
  
-WINDOWS: www.htmlcoin.net/download/Windows.rar
-LINUX 64 BITS:  www.htmlcoin.net/download/Linux-x64.tar.bz2
-LINUX 32 BITS:  www.htmlcoin.net/download/Linux-x86.tar.bz2
+WINDOWS: http://seed.htmlcoin.net/HTMLCoin-1.3.2.1-setup.exe
+MAC OS:  http://seed.htmlcoin.net/Htmlcoin-1.3.2.1-Mac.dmg
+
+## Blockchain
+
+http://seed.htmlcoin.net/htmlcoin_blockchain.zip
 
 ## Community
 
