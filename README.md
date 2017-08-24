@@ -55,6 +55,7 @@ WINDOWS: http://seed.htmlcoin.net/HTMLCoin-1.3.2.1-setup.exe
 MAC OS:  http://seed.htmlcoin.net/Htmlcoin-1.3.2.1-Mac.dmg
 
 ## Blockchain 
+
 http://seed.htmlcoin.net/htmlcoin_blockchain.zip
 
 ## Community
