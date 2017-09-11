@@ -40,7 +40,7 @@ Proof of Developer: http://cryptoasian.com/html-htmlcoin/
 
 ## POW Reward
 Total Block: 10,800,000 
-Block 11 - 10,800,000: 5 000 HTML5 After block 10,800,00 POS will start . 1% Annual PoS.
+Block 11 - 10,800,000: 5 000 HTML5 After block 10,800,000 POS will start . 1% Annual PoS.
 
 ## Ports
 
