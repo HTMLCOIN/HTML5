@@ -11,9 +11,34 @@ HTMLCOIN is a new blockchain based on Qtum which uses Bitcoin Core and integrate
 
 Quickstart
 ----------
+
 ### Build on Ubuntu
 
-    This is a quick start script for compiling HTMLCOIN on Ubuntu
+### Compiling 64bit Linux daemon
+    git clone https://github.com/HTMLCOIN/HTMLCOIN.git
+    cd HTMLCOIN/
+    cd depends/
+    make HOST=x86_64-pc-linux-gnu
+    cd ..
+    rm -Rf src/cpp-ethereum/
+    git submodule update --init --recursive
+    ./autogen.sh
+    ./configure --prefix=`pwd`/depends/x86_64-pc-linux-gnu --without-gui --without-miniupnpc
+    make
+
+### Compiling 32bit Linux daemon
+    git clone https://github.com/HTMLCOIN/HTMLCOIN.git
+    cd HTMLCOIN/
+    cd depends/
+    make HOST=i686-pc-linux-gnu
+    cd ..
+    rm -Rf src/cpp-ethereum/
+    git submodule update --init --recursive
+    ./autogen.sh
+    ./configure --prefix=`pwd`/depends/i686-pc-linux-gnu --without-gui --without-miniupnpc
+    make
+
+    This is a quick start script for compiling HTMLCOIN on Ubuntu including installing dependencies as opposed to using the depends folder as shown above.
 
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git cmake libboost-all-dev
     sudo apt-get install software-properties-common
